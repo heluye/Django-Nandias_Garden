@@ -29,7 +29,9 @@ def order(request):
 		return render(request, 'pizza/order.html', {'pizzaform':form, 'multiple_form':multiple_form})
 
 
-def pizzas(request):	
+def pizzas(request):
+	print('request is:',request)	
+	print('request.GET is:',request.GET)
 	number_of_pizzas = 2
 	filled_multiple_pizza_form = MultiplePizzaForm(request.GET)
 	if filled_multiple_pizza_form.is_valid():
